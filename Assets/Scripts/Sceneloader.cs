@@ -37,9 +37,7 @@ public class SceneBackgroundLoader : MonoBehaviour
 
             if (response != null && response.success && response.data != null)
             {
-                // -----------------------------
-                // 1️⃣ Arka plan görselini yükle
-                // -----------------------------
+
                 SceneImage bgImage = response.data.images.Find(img => img.name == "Hause Of Haba Bcg");
                 if (bgImage != null)
                 {
@@ -51,9 +49,7 @@ public class SceneBackgroundLoader : MonoBehaviour
                     Debug.LogError("Arka plan görseli bulunamadı!");
                 }
 
-                // -----------------------------
-                // 2️⃣ Haba and Chest görselini yükle
-                // -----------------------------
+
                 SceneImage habaChest = response.data.images.Find(img => img.name == "Haba and Chest");
                 if (habaChest != null && habaChestImage != null)
                 {
@@ -65,9 +61,7 @@ public class SceneBackgroundLoader : MonoBehaviour
                     Debug.LogWarning("Haba and Chest görseli bulunamadı!");
                 }
 
-                // -----------------------------
-                // 3️⃣ "Create Btn" stringini al ve ekrana yaz
-                // -----------------------------
+
                 SceneStringItem createBtnItem = response.data.stringItems.Find(item => item.name == "Create Btn");
                 if (createBtnItem != null && createButtonText != null)
                 {
